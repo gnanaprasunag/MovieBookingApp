@@ -1,0 +1,176 @@
+/* General Container */
+.snack-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f9fafb;
+}
+
+/* Selected Items Section */
+.selected-items {
+  flex: 0.3;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.selected-items h2 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.selected-item {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-left: 4px solid #007bff;
+}
+
+.selected-item h3 {
+  font-size: 1.2rem;
+  color: #34495e;
+}
+
+.selected-item h4 {
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
+/* Snacks Grid */
+.snacks-container {
+  flex: 0.7;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  
+}
+
+.snacks-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 10px;
+}
+
+/* Snack Card */
+.snack-card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding:15px;
+}
+
+.snack-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.snack-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.snack-details {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.snack-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.snack-calorie,
+.snack-cost,
+.snack-allergens {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+.snack-controls {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.snack-btn {
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.snack-btn.add-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.snack-btn.add-btn:hover {
+  background-color: #218838;
+}
+
+.snack-btn {
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+.snack-btn:hover {
+  background-color: #dee2e6;
+}
+
+/* Next Button */
+.next-btn {
+  padding: 12px 25px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  align-self: center;
+  transition: background-color 0.3s ease;
+}
+
+.next-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .snack-container {
+    flex-direction: column;
+  }
+
+  .selected-items {
+    flex: unset;
+    width: 100%;
+  }
+
+  .snacks-container {
+    flex: unset;
+    width: 100%;
+  }
+}
