@@ -182,7 +182,7 @@ useEffect(()=>{
     })
   }
 },[latitude,longitude])
-console.log("new date))",new Date())
+
 const[lang,setlang]=useState('Telugu')
 const language=['Telugu','English','Hindi','Tamil','Korean','Hinglish','Malayalam']
 
