@@ -12,6 +12,7 @@ bookinghistoryCltr.create= async (req, res) => {
     }
     const body = req.body 
     const rating = new Bookinghistory(body)
+    console.log("git hub ")
     await rating.save()
     res.status(201).json(rating)
     }
