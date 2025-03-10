@@ -76,7 +76,7 @@ export default function App() {
             await axios.put(
               `/api/users/vippay/${user._id}`,
               { vip: 'yes', vipdate: new Date() },
-              { headers: { 'Authorization': localStorage.getItem('token') } }
+              { headers: { Authorization: localStorage.getItem('token') } }
             );
             dispatch(handleReload());
             alert('VIP subscription activated successfully!');
