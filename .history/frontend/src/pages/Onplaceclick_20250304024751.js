@@ -1,7 +1,7 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import "./onbooktickets.css"; 
+import "./onbooktickets.css"; // Assuming your CSS file is named Timeplace.css
 
 export default function App() {
   
