@@ -191,7 +191,7 @@ const language=['Telugu','English','Hindi','Tamil','Korean','Hinglish','Malayala
         className="microphone-button"
         style={{width:'100px',height:'50px',border:'solid'}}
       >
-        {isListening ? <FontAwesomeIcon icon={faStop} style={{ color: 'white', fontSize: '24px' }} /> : <FontAwesomeIcon icon={faMicrophone} style={{fontSize:"40px",color:'green'}}/>}
+        {isListening ? "🛑" : <FontAwesomeIcon icon={faMicrophone} style={{fontSize:"40px",color:'green'}}/>}
       </button>
       {/* Hidden Textarea for Transcription */}
       <textarea
