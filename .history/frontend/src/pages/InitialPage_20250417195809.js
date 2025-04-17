@@ -4,7 +4,7 @@ import axios from '../config/axios';
 import { useNavigate,useLocation} from "react-router-dom";
 import { useSelector,useDispatch } from "react-redux";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faMicrophone } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faMicrophone,faStop } from '@fortawesome/free-solid-svg-icons';
  // Import specific icon(s) you need
 import { handleReload,handleLogout} from '../components/regSlice';
 import DisplayMovies from './DisplayMovies'
@@ -23,31 +23,6 @@ export default function App(){
     const { user} = useSelector((state) => {
         return state.user
     })
-    /*if(user){console.log("user.vipdate",user.vipdate)
-      console.log("new date user.vipdate",new Date(user.vipdate))
-      console.log("new date",new Date())
-      const date = new Date()
-      const vipdate=new Date(user.vipdate)
-      console.log(date.getDate()+"/"+date.getMonth()+"/"+date.getFullYear())
-      console.log(vipdate.getDate()+"/"+vipdate.getMonth()+"/"+vipdate.getFullYear())
-      console.log("vipdate.getFullYear()+1==date.getFullYear()",vipdate.getFullYear()+1==date.getFullYear())
-    }*/
-
-
-      /*useEffect(() => {
-        // Disable back navigation
-        const handlePopState = () => {
-          window.history.pushState(null, '', window.location.href);
-        };
-    
-        window.history.pushState(null, '', window.location.href);
-        window.addEventListener('popstate', handlePopState);
-    
-        return () => {
-          window.removeEventListener('popstate', handlePopState);
-        };
-      }, []);*/
-
       useEffect(() => {
         if (user && user.vipdate !== null) {
           const date = new Date();
@@ -182,12 +157,12 @@ useEffect(()=>{
     })
   }
 },[latitude,longitude])
-
+console.log("new date))",new Date())
 const[lang,setlang]=useState('Telugu')
 const language=['Telugu','English','Hindi','Tamil','Korean','Hinglish','Malayalam']
 
-    return(<div>
-    <div className="header-container">
+    return(<div style={{backgroundImage: `url('https://www.picture.lk/files/preview/800x1427/11733515120tipwxncjutq5sprwe90idiejp4lza2awlbhrmupqdmzadesygwmvlncet981jmfr1gkk2ereuynw2gei8kwvybqgxt0qmcszqmzh.jpg?type=free')`,backgroundSize:'auto'}}>
+    <div className="header-container" >
   {/* Left side: Image */}
   <div className="image-container">
     <img src={appImage} alt="App Logo" style={{ width: '500px' }} />
@@ -216,7 +191,7 @@ const language=['Telugu','English','Hindi','Tamil','Korean','Hinglish','Malayala
         className="microphone-button"
         style={{width:'100px',height:'50px',border:'solid'}}
       >
-        {isListening ? "🛑" : <FontAwesomeIcon icon={faMicrophone} style={{fontSize:"40px",color:'green'}}/>}
+        {isListening ? <FontAwesomeIcon icon={faStop} style={{ color: 'white', fontSize: '24px' }} /> : <FontAwesomeIcon icon={faMicrophone} style={{fontSize:"40px",color:'green'}}/>}
       </button>
       {/* Hidden Textarea for Transcription */}
       <textarea
