@@ -1,0 +1,92 @@
+/* General container */
+.timeplace-container {
+    padding: 20px;
+    margin: 0 auto;
+    background-color: silver;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    width: 100%; /* Ensure cards take the full width of the container */
+  }
+  
+  /* Page Title */
+  .page-title {
+    font-size: 2.5rem; /* Increased font size */
+    color: black;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  /* Timeplace Card */
+  .timeplace-card {
+    background-color:white;
+    
+    border-radius: 8px;
+    padding: 20px 30px; /* Increased padding for a spacious feel */
+    margin-bottom: 20px;
+    
+    width: 100%; /* Ensure cards take the full width of the container */
+    max-width: 1000px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content within each card */
+    text-align: center;
+  }
+  
+  .place-name {
+    font-size: 1.5rem; /* Increased font size */
+    color: black;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  .visited {
+    font-size: 1.2rem; /* Increased font size */
+    color:rgb(34, 34, 206);
+    margin-bottom: 10px;
+    font-weight: bold;
+    padding-left:80px;
+    border:solid;
+  }
+  
+  .location-name {
+    font-size: 1rem; /* Increased font size */
+    color: black;
+    
+  }
+  
+  /* Time Buttons Container */
+  .time-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Increased gap between buttons */
+    justify-content: center; /* Center align buttons */
+    margin-bottom: 15px;
+  }
+  
+  /* Time Button */
+  .time-button {
+    padding: 12px 25px; /* Increased padding for larger buttons */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem; /* Larger font size for buttons */
+    transition: background-color 0.3s ease;
+  }
+  
+  .time-button:hover {
+    background-color: red;
+  }
+  
+  /* No Shows Text */
+  .no-shows {
+    text-align: center;
+    color: #ff0000;
+    font-size: 1.5rem; /* Increased font size for emphasis */
+    margin-top: 20px;
+  }
+  
