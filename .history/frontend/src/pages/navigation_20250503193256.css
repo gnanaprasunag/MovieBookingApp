@@ -1,0 +1,45 @@
+/* Full page center alignment */
+.navigation-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;  /* Full page height */
+    background-color: #f0f0f0; /* Light gray background */
+    gap: 15px;
+    padding: 20px;
+}
+
+/* Button styling */
+.location-button {
+    padding: 15px 30px;
+    background-color: #ff5722; /* Vibrant orange */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* On hover */
+.location-button:hover {
+    background-color: #e64a19; /* Slightly darker orange */
+    transform: translateY(-2px); /* Lift the button */
+}
+
+/* On click */
+.location-button:active {
+    transform: translateY(0);
+    background-color: #d84315;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .location-button {
+        width: 90%;
+        font-size: 16px;
+    }
+}
