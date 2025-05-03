@@ -6,7 +6,6 @@
 [![MongoDB](https://img.shields.io/badge/Database-MongoDB-brightgreen)](#)
 [![JWT](https://img.shields.io/badge/Auth-JWT-orange)](#)
 [![Razorpay](https://img.shields.io/badge/Payment-Razorpay-important)](#)
-[![Responsive](https://img.shields.io/badge/Responsive-Yes-blueviolet)](#)
 
 ---
 
