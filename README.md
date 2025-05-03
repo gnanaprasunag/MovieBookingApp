@@ -1,4 +1,4 @@
-#  Movie Booking App
+#  Full-stack MERN movie booking platform
 
 [![React](https://img.shields.io/badge/Frontend-React.js-blue)](#)
 [![Node.js](https://img.shields.io/badge/Backend-Node.js-green)](#)
