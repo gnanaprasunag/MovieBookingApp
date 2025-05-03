@@ -1,6 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from '../config/axios';
 
+// ------------------------------
+// 🟢 Async Thunks
+// ------------------------------
 
 const handleApiErrors = (err, rejectWithValue) => {
     if (err.response?.data?.error) {

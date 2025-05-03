@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./navigation.css"; // Assuming the CSS file is in the same directory
+import "./offer.css"; // Assuming the CSS file is in the same directory
 
 export default function Navigation() {
   const navigate = useNavigate();

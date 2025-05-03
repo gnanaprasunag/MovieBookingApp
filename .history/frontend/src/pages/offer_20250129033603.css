@@ -7,9 +7,7 @@ body {
     color: #333;
     line-height: 1.6;
   }
-  li{
-    list-style: disc;
-  }
+  
   .offer-container {
     max-width: 1200px;
     margin: 40px auto;
