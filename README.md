@@ -65,15 +65,19 @@
 ##  Folder Structure
 
 backend/
-├── controllers/
-├── models/
-├── routes/
-├── middleware/
-├── server.js
+├──movie-app-mvc/
+│   ├── app/
+│   │   ├── controllers/
+│   │   ├── models/
+│   │   ├── middlewares/
+│   │   ├── validators/
+│   ├── config
+│   ├── index.js
 
 frontend/
 ├── src/
 │   ├── components/
+│   ├── config/
 │   ├── pages/
 │   ├── App.js
 │   ├── index.js
@@ -86,11 +90,11 @@ frontend/
 git clone https://github.com/gnanaprasunag/MovieBookingApp.git
 
 # Backend Setup
-cd backend
-npm install
-npm start
+- cd backend
+- npm install
+- npm start
 
 # Frontend Setup
-cd frontend
-npm install
-npm start
+- cd frontend
+- npm install
+- npm start
