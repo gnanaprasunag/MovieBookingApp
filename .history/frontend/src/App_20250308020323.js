@@ -2,17 +2,21 @@ import { Routes, Route } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import { handleReload} from './components/regSlice';
+
 import {useEffect} from 'react'
 
+
+//import { useContext } from 'react'
 import PrivateRoute from './components/PrivateRoute';
 import AuthorizeRoute from './components/AuthorizeRoute'
-
+//import AuthContext from './context/AuthContext';
 import { useDispatch } from 'react-redux'; 
 import { reloadMovies,reloadCastcrews,reloadSingledate,reloadTimeplaces,reloadBookinghistory,reloadRatings } from './components/movieSlice';
 import Register from './pages/registerLoginUserprofile/Register';
 import Login from './pages/registerLoginUserprofile/Login';
 
 import Profile from './pages/registerLoginUserprofile/Profile';
+//import Genre from './pages/Genre';
 import ListUsers from './pages/registerLoginUserprofile/ListUsers';
 import Forbidden from './pages/registerLoginUserprofile/Forbidden';
 import Direction from './pages/Direction';
@@ -84,8 +88,11 @@ function App() {
         <Routes>
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+         
           <Route path="/direction" element={
+            
               <Direction />
+            
           } />
            <Route path="/moviedetails" element={
             <PrivateRoute>
@@ -121,7 +128,9 @@ function App() {
               <Ratings />
           } />
           <Route path="/allratings" element={
+            
               <AllRatings />
+            
           } />
            <Route path="/alldetails" element={
             <PrivateRoute>
@@ -129,7 +138,9 @@ function App() {
             </PrivateRoute>
           } />
           <Route path="/availableoffers" element={
+            
               <AvailableOffers />
+            
           } />
           <Route path="/applicableoffers" element={
             <PrivateRoute>
@@ -142,10 +153,14 @@ function App() {
             </PrivateRoute>
           } />
            <Route path="/genre" element={
+            
               <Genre />
+            
           } />
            <Route path="/browsehere" element={
+            
               <BrowseHere />
+            
           } />
           <Route path="/call" element={
             <PrivateRoute>
@@ -158,13 +173,19 @@ function App() {
             </PrivateRoute>
           } />
            <Route path="/voicesearch" element={
+            
               <VoiceSearch />
+            
           } />
            <Route path="/navigation" element={
+            
               <Navigation/>
+            
           } />
           <Route path="/initialpage" element={
+            
               <InitialPage/>
+            
           } />
           <Route path="/profile" element={
             <PrivateRoute>
@@ -172,7 +193,9 @@ function App() {
             </PrivateRoute>
           } />
           <Route path="/fandq" element={
+            
               <FandQ />
+            
           } />
            <Route path="/pay" element={
             <PrivateRoute>
@@ -180,16 +203,24 @@ function App() {
             </PrivateRoute>
           } />
             <Route path="/onmovieclick" element={
+            
               <Onmovieclick />
+            
           } />
            <Route path="/onplaceclick" element={
+            
               <Onplaceclick />
+            
           } />
           <Route path="/onlocationclick" element={
+            
               <Onlocationclick />
+              
           } />
         <Route path="/onbooktickets" element={
+            
               <Onbooktickets />
+            
           } />
           
           <Route path="/listusers" element={
@@ -209,4 +240,7 @@ function App() {
 
 export default App;
 
-                       
+                       /* {(state.user.role=='admin' || state.user.role=='moderator') && <li><Link to="/list-users">List Users</Link></li>}
+             
+             <li><Link to="/my-notes">My Notes</Link></li>
+           */
