@@ -8,7 +8,7 @@ body {
     line-height: 1.6;
   }
   li{
-    list-style: disc;
+    list-style:circle;
   }
   .offer-container {
     max-width: 1200px;

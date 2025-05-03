@@ -1,6 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from '../config/axios';
 
+// ------------------------------
+// 🟢 Async Thunks
+// ------------------------------
 
 const handleApiErrors = (err, rejectWithValue) => {
     if (err.response?.data?.error) {
@@ -18,6 +21,7 @@ export const reloadSingledate = createAsyncThunk(
     async (_, { rejectWithValue }) => {
         try {
             const response = await axios.get('/api/singledate');
+            console.log("reloadSingledate response:", response.data);
             return response.data;
         } catch (err) {
             return handleApiErrors(err, rejectWithValue);
@@ -30,6 +34,7 @@ export const reloadMovies = createAsyncThunk(
     async (_, { rejectWithValue }) => {
         try {
             const response = await axios.get('/api/movies');
+            console.log("reloadMovies response:", response.data);
             return response.data;
         } catch (err) {
             return handleApiErrors(err, rejectWithValue);
@@ -42,6 +47,7 @@ export const reloadCastcrews = createAsyncThunk(
     async (_, { rejectWithValue }) => {
         try {
             const response = await axios.get('/api/castcrew');
+            console.log("reloadCastcrews response:", response.data);
             return response.data;
         } catch (err) {
             return handleApiErrors(err, rejectWithValue);
@@ -54,6 +60,7 @@ export const reloadTimeplaces = createAsyncThunk(
     async (_, { rejectWithValue }) => {
         try {
             const response = await axios.get('/api/timeplace');
+            console.log("reloadTimeplaces response:", response.data);
             return response.data;
         } catch (err) {
             return handleApiErrors(err, rejectWithValue);
@@ -66,6 +73,7 @@ export const reloadBookinghistory = createAsyncThunk(
     async (_, { rejectWithValue }) => {
         try {
             const response = await axios.get('/api/bookinghistory');
+            console.log("reloadBookinghistory response:", response.data);
             return response.data;
         } catch (err) {
             return handleApiErrors(err, rejectWithValue);
@@ -78,6 +86,7 @@ export const reloadRatings = createAsyncThunk(
     async (_, { rejectWithValue }) => {
         try {
             const response = await axios.get('/api/rating');
+            console.log("reloadRatings response:", response.data);
             return response.data;
         } catch (err) {
             return handleApiErrors(err, rejectWithValue);
@@ -106,55 +115,78 @@ const movieSlice = createSlice({
     initialState,
     reducers: {
         handleEditId: (state, action) => {
+            console.log("Setting editId:", action.payload);
             state.editId = action.payload;
         },
         handleServerErrors: (state, action) => {
             state.error = action.payload;
         },
         moviesAfterEdit: (state, action) => {
+            console.log("Updating movies after edit:", action.payload);
             state.allmovies = action.payload;
         },
         castcrewAfterRemove: (state, action) => {
+            console.log("Updating castcrews after remove:", action.payload);
             state.allcastcrews = action.payload;
         },
         timeplaceAfterRemove: (state, action) => {
+            console.log("Updating timeplaces after remove:", action.payload);
             state.alltimeplaces = action.payload;
         },
         ratingAfterRemove: (state, action) => {
+            console.log("Updating ratings after remove:", action.payload);
             state.allratings = action.payload;
         }
     },
     extraReducers: (builder) => {
-        builder
-            .addCase(reloadMovies.pending, (state) => {
-                state.status = "loading";
-            })
-            .addCase(reloadMovies.fulfilled, (state, action) => {
-                state.allmovies = action.payload;
-                state.status = "idle";
-            })
-            .addCase(reloadMovies.rejected, (state, action) => {
-                state.error = action.payload?.serverErrors;
-                state.status = "idle";
-            })
-            .addCase(reloadSingledate.fulfilled, (state, action) => {
-                state.allsingledate = action.payload;
-            })
-            .addCase(reloadCastcrews.fulfilled, (state, action) => {
-                state.allcastcrews = action.payload;
-            })
-            .addCase(reloadCastcrews.rejected, (state, action) => {
-                state.error = action.payload?.serverErrors;
-            })
-            .addCase(reloadTimeplaces.fulfilled, (state, action) => {
-                state.alltimeplaces = action.payload;
-            })
-            .addCase(reloadBookinghistory.fulfilled, (state, action) => {
-                state.allbookinghistories = action.payload;
-            })
-            .addCase(reloadRatings.fulfilled, (state, action) => {
-                state.allratings = action.payload;
-            });
+        // Reload Movies
+        builder.addCase(reloadMovies.pending, (state) => {
+            console.log("reloadMovies pending...");
+            state.status = "loading";
+        });
+        builder.addCase(reloadMovies.fulfilled, (state, action) => {
+            console.log("reloadMovies fulfilled:", action.payload);
+            state.allmovies = action.payload;
+            state.status = "idle";
+        });
+        builder.addCase(reloadMovies.rejected, (state, action) => {
+            console.log("reloadMovies rejected:", action.payload);
+            state.error = action.payload?.serverErrors;
+            state.status = "idle";
+        });
+
+        // Reload Single Date
+        builder.addCase(reloadSingledate.fulfilled, (state, action) => {
+            console.log("reloadSingledate fulfilled:", action.payload);
+            state.allsingledate = action.payload;
+        });
+
+        // Reload Castcrews
+        builder.addCase(reloadCastcrews.fulfilled, (state, action) => {
+            console.log("reloadCastcrews fulfilled:", action.payload);
+            state.allcastcrews = action.payload;
+        });
+        builder.addCase(reloadCastcrews.rejected, (state, action) => {
+            state.error = action.payload?.serverErrors;
+        });
+
+        // Reload Timeplaces
+        builder.addCase(reloadTimeplaces.fulfilled, (state, action) => {
+            console.log("reloadTimeplaces fulfilled:", action.payload);
+            state.alltimeplaces = action.payload;
+        });
+
+        // Reload Booking History
+        builder.addCase(reloadBookinghistory.fulfilled, (state, action) => {
+            console.log("reloadBookinghistory fulfilled:", action.payload);
+            state.allbookinghistories = action.payload;
+        });
+
+        // Reload Ratings
+        builder.addCase(reloadRatings.fulfilled, (state, action) => {
+            console.log("reloadRatings fulfilled:", action.payload);
+            state.allratings = action.payload;
+        });
     }
 });
 
