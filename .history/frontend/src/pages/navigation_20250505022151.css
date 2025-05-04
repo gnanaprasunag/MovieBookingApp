@@ -1,0 +1,44 @@
+/* Full-page container styling */
+.navigation-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ec8ac5, #e8b547); /* Soft gradient */
+    gap: 20px;
+    padding: 20px;
+    max-width:50%;
+    margin:0 auto;
+}
+
+/* Location button styling */
+.location-button {
+    padding: 15px 35px;
+    background-color: #4a90e2; /* Elegant blue */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    text-transform: capitalize;
+}
+
+/* Hover effect */
+.location-button:hover {
+    background-color: #357ABD;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Click effect */
+.location-button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
