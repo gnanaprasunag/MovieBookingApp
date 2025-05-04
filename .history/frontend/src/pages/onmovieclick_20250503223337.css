@@ -1,0 +1,123 @@
+/* General container */
+.movie-details-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    gap: 20px;
+  }
+  
+  /* Video and Details Section */
+  .video-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    max-width: 100%;
+    
+    
+  }
+  
+  .video-container video {
+    width: 600px; /* Adjusted video width to fit flex container */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .movie-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align movie details at the end */
+    align-items: flex-start; /* Align items to the start horizontally */
+    gap: 15px;
+    border:none;
+    
+}
+
+.movie-info div {
+  display: flex;
+  justify-content: space-between;
+  border:solid;
+}
+.movie-info div button{
+  
+  background-color: aliceblue;
+  }
+
+
+.movie-info div h2{
+  padding-left:70px;
+  padding-right:70px;
+  }
+
+.movie-info h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin: 0 0 10px;
+}
+
+.movie-info h4 {
+  font-size: 1.2rem;
+  color: #666;
+  margin: 0;
+}
+  /* Cast and Crew Section */
+  .cast-crew-section {
+    margin-top: 30px;
+  }
+  
+  .cast-crew-label {
+    font-size: 1.5rem;
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  .cast-crew-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .cast-crew-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    border-radius: 10px;
+    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .cast-crew-card img {
+    
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .cast-crew-card h3 {
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+  }
+  
+  /* Book Tickets Button */
+  .book-tickets-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    align-self: flex-start;
+    transition: background-color 0.3s ease;
+  }
+  
+  .book-tickets-button:hover {
+    background-color: #0056b3;
+  }
+  

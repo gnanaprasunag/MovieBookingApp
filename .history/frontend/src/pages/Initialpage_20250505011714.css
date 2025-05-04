@@ -1,0 +1,269 @@
+/* General layout styles */
+body {
+    font-family:cursive;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  header, footer {
+    
+    color: white;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .secondpart {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    
+    margin-top:0;
+  }
+  
+  main {
+    flex: 1;
+    padding: 1rem;
+  }
+  
+  /* Top section layout */
+  .header-container {
+    display: flex;
+    align-items: stretch; /* Ensures both left and right parts have the same height */
+    justify-content: space-between;
+    padding: 1rem;
+    
+    
+    
+    gap: 20px;
+  }
+  
+  
+  .image-container {
+    /* Prevents resizing of the image */
+    display: flex;
+    align-items: center;
+  }
+  
+  .image-container img {
+    height: 100%;
+    max-height: 300px; /* Optional: Limit the height of the image */
+    object-fit: contain;
+    border:solid;
+  }
+  
+  .actions-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    gap: 1rem;
+  }
+  
+
+  .container1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex: 1;
+    gap: 1rem;
+    
+  }
+  /* Upper part: Search bar and voice-to-text */
+  .actions-upper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Spacing between the search bar and navigate button */
+    
+    
+  }
+  
+  .voice-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  /* Lower part: Microphone, Menu, and User details */
+  .actions-lower {
+    display: flex;
+    justify-content: center; /* Center all items horizontally */
+    align-items: center;
+    gap: 20px; /* Add spacing between items */
+  }
+  
+  .microphone-button {
+    background: none;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    
+  }
+  
+  .menu-button {
+    background: #007bff;
+    color: white;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+    
+  }
+  
+  input[type="text"] {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    
+  }
+  
+  .footer-left-button {
+    margin-left: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .footer-right-button {
+    margin-right: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  /* Sidebar styles */
+  .sidepanel {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidepanel button {
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    background: none;
+    border: none;
+    text-align: left;
+  }
+  
+  .sidepanel button:hover {
+    background-color: #575757;
+  }
+  
+  .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+  }
+  
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  /* Admin Dashboard styles */
+.admin-dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 1rem;
+    justify-content: center;
+    margin:3px;
+  }
+  
+  .admin-dashboard button {
+    padding: 0.7rem 1rem;
+    background:linear-gradient(45deg, #36d1dc, #5b86e5);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .admin-dashboard button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Language Buttons */
+  .language-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 1rem;
+    justify-content: center;
+  }
+  
+  .language-container button {
+    padding: 0.5rem 1rem;
+    background-color: #ffd700; /* Gold */
+    color: #000; /* Black text */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .selected{
+    background-color:#007bff;
+  }
+  
+  .language-container button:hover {
+    background-color: #1e7e34;
+  }
+  
+  
+  
