@@ -149,7 +149,7 @@ console.log("email",email)
                 return <li key={i}>{ele}</li>
             })}</ul>
             </div>}
-            <form className="form" onSubmit={handleSubmit} autocomplete="on">
+            <form className="form" onSubmit={handleSubmit}>
                 {!editId && 
                 <div>
                 <label className="label">Email</label>
