@@ -119,6 +119,9 @@ export const movieValidationSchema = {
         },
         trim: true 
     },
+    
+  
+   
 
 }
 

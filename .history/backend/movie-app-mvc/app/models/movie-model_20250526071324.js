@@ -16,5 +16,6 @@ const movieSchema = new Schema({
 })
 
 export const Movie = model('Movie', movieSchema)
-
+//export const Cast = model('Movie', castSchema)
+//export const Crew = model('Movie', crewSchema)
 

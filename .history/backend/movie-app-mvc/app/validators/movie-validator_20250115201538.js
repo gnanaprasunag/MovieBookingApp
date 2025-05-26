@@ -21,6 +21,8 @@ export const movieValidationSchema = {
         trim: true 
     },
   
+ 
+ 
     genre:{
         in: ['body'],
         exists: {
@@ -33,6 +35,7 @@ export const movieValidationSchema = {
     },
     language:{
         in: ['body'],
+        
         exists: {
             errorMessage: 'language is required'
         },
@@ -119,6 +122,9 @@ export const movieValidationSchema = {
         },
         trim: true 
     },
+    
+  
+   
 
 }
 

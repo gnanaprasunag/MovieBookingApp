@@ -75,10 +75,11 @@ const { old, email } = req.body;
 }
 
 
+// Delete a movie by ID
 bookinghistoryCltr.remove=async(req, res) => {
     const {id, bookingId } = req.params 
     try{
-    
+    // Update the document by pulling the specific booking from the array
     const result = await Bookinghistory.findOneAndUpdate(
       { _id: id }, // Match the user document
       { $pull: { booked: { _id: bookingId } } }, // Remove the booking with the specific _id

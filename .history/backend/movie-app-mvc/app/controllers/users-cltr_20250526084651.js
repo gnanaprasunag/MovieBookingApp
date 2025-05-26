@@ -48,11 +48,13 @@ usersCltr.login = async (req, res) => {
         
         const isValid  =await bcryptjs.compare(password, user.password)
         if(!isValid) {
+            console.log("password not valid in login")
             return res.status(404).json({ error: 'invalid password '})
         }
-        
+        console.log("login 1")
         const tokenData = { userId: user._id,role:user.role }//add role in the token data
         const token = jwt.sign(tokenData, process.env.JWT_SECRET )//{ expiresIn: '7d'}
+        console.log("login 2")
         return res.json({ user:user,token })
     } catch(err) {
         res.status(500).json({ error: "something went wrong"})
@@ -75,6 +77,7 @@ usersCltr.onlyemailcheck = async (req, res) => {
 usersCltr.account = async (req, res) => {
     const errors = validationResult(req)
     if(!errors.isEmpty()) {
+        console.log("errors, in ogin",errors.array())
         return res.status(400).json({ errors: errors.array()})
     }
     try  {
@@ -126,6 +129,7 @@ usersCltr.changeEmail=async (req, res) =>{
     try{
         const id=req.params.id
         const {email}= req.body 
+        console.log("email",email)
         const errors = validationResult(req)
         if(!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() })
@@ -220,7 +224,7 @@ usersCltr.passwordchange = async (req, res) => {
     try {
         if(req.body.email){
             const usermail=await User.findOne({email:req.body.email})
-            
+            console.log("usermail in password change gthrough mail",usermail)
             const user=await User.findByIdAndUpdate(usermail.id,{password},{new:true})
             const salt = await bcryptjs.genSalt()
         const hash =  await bcryptjs.hash(user.password, salt)

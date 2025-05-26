@@ -220,7 +220,7 @@ usersCltr.passwordchange = async (req, res) => {
     try {
         if(req.body.email){
             const usermail=await User.findOne({email:req.body.email})
-            
+            console.log("usermail in password change gthrough mail",usermail)
             const user=await User.findByIdAndUpdate(usermail.id,{password},{new:true})
             const salt = await bcryptjs.genSalt()
         const hash =  await bcryptjs.hash(user.password, salt)

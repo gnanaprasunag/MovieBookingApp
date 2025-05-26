@@ -2,7 +2,8 @@ import { useState,useEffect } from "react";
 import { handleEditId, handleReload, handleServerErrors } from '../../components/regSlice'; 
 import { useSelector, useDispatch } from 'react-redux'; 
 import { useNavigate } from 'react-router-dom';
-import axios from '../../config/axios'
+import axios from '../../config/axios';
+import Register from "./Register";
 import './profile.css';
 
 export default function Profile() {
@@ -18,7 +19,8 @@ export default function Profile() {
   const [email, setEmail] = useState(null);
   const [mobile, setMobile] = useState(null);
 
-  const { user, error} = useSelector((state) => state.user);
+  const { user, error,editId } = useSelector((state) => state.user);
+  console.log("token in profile",localStorage.getItem('token'))
   
   useEffect(()=>{
     if (messageMail || messageMobile) {
@@ -41,6 +43,7 @@ export default function Profile() {
   if (!user) {
     return <p>Loading...</p>;
   }
+
 
   const handleMailsms = () => {
     const message = Math.floor(Math.random() * 1000);

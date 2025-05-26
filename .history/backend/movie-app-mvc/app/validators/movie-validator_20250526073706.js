@@ -33,6 +33,7 @@ export const movieValidationSchema = {
     },
     language:{
         in: ['body'],
+        
         exists: {
             errorMessage: 'language is required'
         },
@@ -119,6 +120,9 @@ export const movieValidationSchema = {
         },
         trim: true 
     },
+    
+  
+   
 
 }
 
