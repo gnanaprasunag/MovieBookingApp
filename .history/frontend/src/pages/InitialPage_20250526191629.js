@@ -14,8 +14,7 @@ export default function App(){
     const dispatch=useDispatch()
    const fruits = ['apple', 'banana', 'jack', 'guava']
 
-console.log(fruits.splice(2, 2,"f","fr","br"))//removes jack
-console.log("fruits",fruits)
+console.log(fruits.splice(2, 2))//removes jack
 console.log(fruits.splice(2, 3))//removes jack
 
     const location = useLocation();

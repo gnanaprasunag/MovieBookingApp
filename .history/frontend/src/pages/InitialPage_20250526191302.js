@@ -12,11 +12,8 @@ export default function App(){
     let appImage="https://res.cloudinary.com/dxrbuyd4b/image/upload/v1737347669/oirr91odqlxcvfmy6vtr.png"
     const navigate=useNavigate()
     const dispatch=useDispatch()
-   const fruits = ['apple', 'banana', 'jack', 'guava']
-
-console.log(fruits.splice(2, 2,"f","fr","br"))//removes jack
-console.log("fruits",fruits)
-console.log(fruits.splice(2, 3))//removes jack
+    let a="hdcb, dbcjd, bcdh"
+console.log("slice",a.slice(6,12))
 
     const location = useLocation();
     const { selectedlocation } = location.state || {};

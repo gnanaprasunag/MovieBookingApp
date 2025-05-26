@@ -173,7 +173,7 @@
 }
 
 .seat.booked {
-  background: linear-gradient(45deg, red, red);
+  background: linear-gradient(45deg, red,red);
   cursor: not-allowed;
   pointer-events: none;  /* Prevents all mouse interactions */
   opacity: 0.6;
