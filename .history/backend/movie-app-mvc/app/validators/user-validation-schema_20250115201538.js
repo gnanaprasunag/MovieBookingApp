@@ -138,6 +138,9 @@ if(num){
             },
             custom: {
                 options: function(value) {
+                    console.log("value in vakid",value)
+                    console.log("new Date()",new Date())
+                    console.log("new Date(value)",new Date(value))
                     if(new Date(value) > new Date()) {
                         throw new Error('anniversary cannot be greater than today')
                     } 

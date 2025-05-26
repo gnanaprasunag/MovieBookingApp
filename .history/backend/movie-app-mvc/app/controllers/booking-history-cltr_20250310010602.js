@@ -42,7 +42,7 @@ bookinghistoryCltr.update= (req, res) => {
 
     const id = req.params.id 
     const body = req.body 
-    
+    console.log("body in update booking",body)
     Bookinghistory.findByIdAndUpdate(id,{user_name:body.user_name,booked:body.booked}, { new: true })
         .then((movie) => {
             if(!movie)  {
@@ -60,8 +60,8 @@ bookinghistoryCltr.update= (req, res) => {
 bookinghistoryCltr.updateMail=(req, res) => {
 const { old, email } = req.body; 
   Bookinghistory.updateOne(
-    { user_name: old }, 
-    { $set: { user_name: email } }
+    { user_name: old }, // Match old email
+    { $set: { user_name: email } } // Update user_name with new email
   )
       .then((movie) => {
           if(!movie)  {
@@ -75,10 +75,11 @@ const { old, email } = req.body;
 }
 
 
+// Delete a movie by ID
 bookinghistoryCltr.remove=async(req, res) => {
     const {id, bookingId } = req.params 
     try{
-    
+    // Update the document by pulling the specific booking from the array
     const result = await Bookinghistory.findOneAndUpdate(
       { _id: id }, // Match the user document
       { $pull: { booked: { _id: bookingId } } }, // Remove the booking with the specific _id

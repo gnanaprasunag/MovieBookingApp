@@ -126,6 +126,7 @@ usersCltr.changeEmail=async (req, res) =>{
     try{
         const id=req.params.id
         const {email}= req.body 
+        console.log("email",email)
         const errors = validationResult(req)
         if(!errors.isEmpty()) {
             return res.status(400).json({ errors: errors.array() })
@@ -220,7 +221,7 @@ usersCltr.passwordchange = async (req, res) => {
     try {
         if(req.body.email){
             const usermail=await User.findOne({email:req.body.email})
-            
+            console.log("usermail in password change gthrough mail",usermail)
             const user=await User.findByIdAndUpdate(usermail.id,{password},{new:true})
             const salt = await bcryptjs.genSalt()
         const hash =  await bcryptjs.hash(user.password, salt)

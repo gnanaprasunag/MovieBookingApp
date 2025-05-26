@@ -38,7 +38,7 @@ ratingCltr.updateMail=(req, res) => {
      
      Rating.updateMany(
       { user_name: old }, 
-      { $set: { user_name: email } } 
+      { $set: { user_name: email } } /
     )
         .then((movie) => {
             if(!movie)  {

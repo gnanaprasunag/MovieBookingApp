@@ -7,14 +7,18 @@ const movieSchema = new Schema({
    trailer:String,
    description:String,
    city:String,
+   
    certificate:String,
+   
+  
    movie_duration:String,
-   genre:Array,
+  genre:Array,
    movie_image:String,
    releaseDate:Date,
    
 })
 
 export const Movie = model('Movie', movieSchema)
-
+//export const Cast = model('Movie', castSchema)
+//export const Crew = model('Movie', crewSchema)
 
