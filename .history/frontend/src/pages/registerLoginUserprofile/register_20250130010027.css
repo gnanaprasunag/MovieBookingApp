@@ -1,0 +1,88 @@
+
+/* Main container */
+.container {
+    width: 100%;
+    max-width: 900px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    
+}
+
+/* Labels */
+label {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+    color:black;
+}
+
+/* Input fields */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="date"] {
+    width: 100%;
+    border:solid;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+/* Input focus effect */
+input:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* Error messages */
+span {
+    color: red;
+    font-size: 12px;
+    margin-top: -10px;
+}
+
+/* Submit button */
+input[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    padding: 12px;
+    
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Server errors container */
+.server-errors {
+    background: #ffcccc;
+    padding: 10px;
+    border-radius: 5px;
+    color: red;
+    margin-bottom: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+}

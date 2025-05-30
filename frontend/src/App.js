@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route ,Navigate} from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { handleReload } from './components/regSlice';
@@ -14,7 +14,7 @@ import {
     reloadBookinghistory,
     reloadRatings
 } from './components/movieSlice';
-import { useNavigate } from 'react-router-dom';
+
 
 // Lazy-loaded components
 const Register = lazy(() => import('./pages/registerLoginUserprofile/Register'));
@@ -52,7 +52,7 @@ const AvailableOffers = lazy(() => import('./pages/AvailableOffers'));
 const ApplicableOffers = lazy(() => import('./pages/ApplicableOffers'));
 
 function App() {
-    const navigate = useNavigate();
+    
     const dispatch = useDispatch();
 
     // Reload data and user session when app starts
@@ -74,17 +74,13 @@ function App() {
         })();
     }, []);
 
-    // Redirect "/" to /initialpage
-    useEffect(() => {
-        if (window.location.pathname === '/') {
-            navigate('/initialpage');
-        }
-    }, []);
+   
 
     return (
         <div className="App">
             <Suspense fallback={<div>Loading...</div>}>
                 <Routes>
+                    <Route path="/" element={<Navigate to="/initialpage" replace />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/login" element={<Login />} />
                     <Route path="/direction" element={<Direction />} />

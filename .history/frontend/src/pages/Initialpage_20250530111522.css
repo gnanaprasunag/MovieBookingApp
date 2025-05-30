@@ -1,0 +1,102 @@
+/* Responsive Design */
+@media (max-width: 768px) {
+  .secondpart,
+  .header-container,
+  .container1,
+  .actions-lower {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-container img {
+    max-height: 200px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .actions-container {
+    width: 100%;
+    align-items: center;
+  }
+
+  .search-container,
+  .voice-search {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .search-container input[type="text"] {
+    width: 100%;
+  }
+
+  .microphone-button,
+  .menu-button,
+  .footer-left-button,
+  .footer-right-button {
+    width: 100%;
+  }
+
+  .admin-dashboard,
+  .language-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .admin-dashboard button,
+  .language-container button {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .user-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 10px;
+    position: static;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+  }
+
+  .header-container {
+    padding: 0.5rem;
+  }
+
+  .image-container img {
+    max-height: 150px;
+  }
+
+  .menu-button {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .footer-left-button,
+  .footer-right-button {
+    margin: 0;
+    padding: 0.5rem;
+    font-size: 14px;
+  }
+
+  .sidepanel {
+    padding-top: 40px;
+  }
+
+  .sidepanel button {
+    font-size: 16px;
+  }
+
+  .admin-dashboard button,
+  .language-container button {
+    font-size: 14px;
+    padding: 0.5rem;
+  }
+}
