@@ -1,19 +1,19 @@
 
 import Twilio from 'twilio';
 
-let TWILIO_ACCOUNT_SID='AC078d681b1014915de003b0c5e0e32b0b'
-let TWILIO_AUTH_TOKEN='4ea5e10f0ec63fdff7fd5941fa3c89f4'
-let TWILIO_PHONE_NUMBER='+16072089109'
+let TWILIO_ACCOUNT_SID='AC97583b38f7bda481449d0a04aee0a463'
+let TWILIO_AUTH_TOKEN='7a541d07dd767b017794f457bf286a22'
+let TWILIO_PHONE_NUMBER='+18455848013'
 
 const client = new Twilio(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN);
 // POST endpoint to send a message
  const sendMessage= (req, res) => {
     const { number, message } = req.body;
-    client.messages
+    /*client.messages
       .create({
         body: message,
         to: number,
-        from :'+16072089109',
+        from :'+18455848013',
       })
       .then((message) => {
         console.log("succ iun messege twilio")
@@ -22,7 +22,7 @@ const client = new Twilio(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN);
       .catch((err) => {
         console.log("err in message twiolio",err)
         res.status(500).send({ success: false, error: err.message });
-      });
+      });*/
   };
  
 export default sendMessage
