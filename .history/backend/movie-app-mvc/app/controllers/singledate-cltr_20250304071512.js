@@ -46,7 +46,7 @@ singledateCltr.list=async(req, res) => {
         const singledates = await Singledate.find({});
         res.json(singledates);
       } catch (error) {
-        console.log(error)
+        console.log(err)
         res.status(500).json({ error: 'Something went wrong'}) 
       }
 }
